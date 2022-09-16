@@ -42,9 +42,9 @@ resource "aws_s3_bucket_object" "commit_handler_archive" {
   source = data.archive_file.commit_handler.output_path
   etag   = filemd5(data.archive_file.commit_handler.output_path)
 
-  lifecycle {
+  /* lifecycle {
     ignore_changes = [
       etag,
     ]
-  }
+  } */
 }

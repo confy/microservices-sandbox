@@ -27,4 +27,10 @@ resource "aws_iam_role_policy_attachment" "sns" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
 
+# add AWSLambdaBasicExecutionRole  policy
+resource "aws_iam_role_policy_attachment" "lambda" {
+  role       = aws_iam_role.access_user.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
 
